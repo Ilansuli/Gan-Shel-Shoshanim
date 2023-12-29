@@ -1,0 +1,50 @@
+[
+  {
+    "imgSrc": "../../public/images/intro-garden-narrow.jpg",
+    "name": "עצים",
+    "route": "trees",
+    "_id": 4124
+  },
+  {
+    "imgSrc": "../../public/images/intro-garden-narrow.jpg",
+    "name": "דקים",
+    "route": "decks",
+    "_id": 4112
+  },
+  {
+    "imgSrc": "../../public/images/intro-garden-narrow.jpg",
+    "name": "דשא סינטטי",
+    "route": "synthetic-grass",
+    "_id": 5123
+  },
+  {
+    "imgSrc": "../../public/images/intro-garden-narrow.jpg",
+    "name": "פרגולות",
+    "route": "pergolas",
+    "_id": 5153
+  },
+  {
+    "imgSrc": "../../public/images/intro-garden-narrow.jpg",
+    "name": "אבני מדרך",
+    "route": "stepping-stones",
+    "_id": 9123
+  },
+  {
+    "imgSrc": "../../public/images/intro-garden-narrow.jpg",
+    "name": "ארוגות",
+    "route": "flowerbeds",
+    "_id": 8123
+  },
+  {
+    "imgSrc": "../../public/images/intro-garden-narrow.jpg",
+    "name": "חלוקי נחל",
+    "route": "pebbles",
+    "_id": 6216
+  },
+  {
+    "imgSrc": "../../public/images/intro-garden-narrow.jpg",
+    "name": "תאורת גינה",
+    "route": "garden-lightings",
+    "_id": 5214
+  }
+]
