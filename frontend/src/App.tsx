@@ -11,8 +11,8 @@ function App() {
   return (
     <>
       <MainHeader />
-      <ScrollRestoration getKey={(location) => location.pathname} />
       <Outlet />
+      <ScrollRestoration getKey={(location) => location.pathname} />
       <MainFooter />
     </>
   );

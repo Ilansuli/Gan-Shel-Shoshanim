@@ -189,9 +189,8 @@ const MenuDrawer: React.FC<SwipeableDrawerProps> = ({
     location.pathname.includes("/men") ? true : false
   );
   const [isSubMenuOpen, setIsSubMenuOpen] = useState<boolean>(false);
-  const [currentCategory, setCurrentCategory] = useState<TCategory | null>(
-    null
-  );
+  const [currentCategory, setCurrentCategory] =
+    useState<TGalleryCategory | null>(null);
 
   const menCategoriesQuery = useQuery({
     queryKey: ["categories", "men"],
@@ -238,7 +237,7 @@ const MenuDrawer: React.FC<SwipeableDrawerProps> = ({
       <DrawerMain>
         <Categories>
           {(isMen ? menCategoriesQuery.data : womenCategoriesQuery.data)?.map(
-            (category: TCategory) => (
+            (category: TGalleryCategory) => (
               <Category
                 key={category._id}
                 onClick={() => {

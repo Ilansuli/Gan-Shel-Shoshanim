@@ -1,14 +1,10 @@
-import { Route, redirect } from "@tanstack/react-router";
+import { Navigate, Route, redirect } from "@tanstack/react-router";
 import rootRoute from "./rootRoute";
-import { HomePage } from "../pages";
 
 const catchAllRoute = new Route({
   getParentRoute: () => rootRoute,
   path: "*",
-  beforeLoad: () => {
-    throw redirect({ to: "/" });
-  },
-  component: HomePage,
+  component: () => <Navigate to={"/"} />,
 });
 
 export default catchAllRoute;
