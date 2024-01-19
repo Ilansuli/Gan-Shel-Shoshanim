@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { Container as ContainerOrigin, Link as LinkOrigin } from "../libs";
-import { ReactComponent as Logo } from "../../public/gan-shel-shoshanim-logo.svg";
+import { ReactComponent as Logo } from "../assets/logos/gan-shel-shoshanim-logo.svg";
 
 const Wrapper = styled.header`
   background: var(--component-main-header-background);

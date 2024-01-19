@@ -5,8 +5,8 @@ import {
   Modal as ModalOrigin,
 } from "../libs";
 import { useState } from "react";
-import { ReactComponent as Logo } from "../../public/gan-shel-shoshanim-logo-white.svg";
-
+import { ReactComponent as Logo } from "../assets/logos/gan-shel-shoshanim-logo-white.svg";
+import { Phone, WhatsApp } from "@mui/icons-material";
 const StyledFooter = styled.footer`
   background-color: var(--system-common-heading);
   padding-block: 5.5rem;
@@ -57,7 +57,7 @@ const Modal = styled(ModalOrigin)`
   }
 `;
 const ModalHeader = styled.header`
-  background-image: url("../../public/images/contact-modal/contact-modal-header.jpg");
+  background-image: url("/images/contact-modal/contact-modal-header.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -117,10 +117,10 @@ const MainFooter: React.FC = () => {
                   "היי, אשמח לקבל פגישת ייעוץ מותאמת לגינה שלי"
                 )}`}
               >
-                <IconButton iconName="WhatsApp" />
+                <IconButton Icon={WhatsApp} />
               </a>
               <a href="tel:0504578996">
-                <IconButton iconName="Phone" />
+                <IconButton Icon={Phone} />
               </a>
             </ContactOptions>
           </ContactUsWrapper>

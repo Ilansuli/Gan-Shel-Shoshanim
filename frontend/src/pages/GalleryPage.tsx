@@ -4,13 +4,11 @@ import { Container } from "../libs";
 import { httpService } from "../services";
 import { useQuery } from "@tanstack/react-query";
 
-type GalleryPageProps = {};
-
 const Wrapper = styled.section`
   min-height: 100dvh;
 `;
 
-const GalleryPage: React.FC<GalleryPageProps> = ({}) => {
+const GalleryPage: React.FC = ({}) => {
   const categoriesQuery = useQuery({
     queryKey: ["categories"],
     queryFn: async () => {

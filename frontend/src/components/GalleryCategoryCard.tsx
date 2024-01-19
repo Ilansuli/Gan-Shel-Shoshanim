@@ -7,9 +7,6 @@ import {
 import { TGalleryCategory } from "../types";
 import styled from "@emotion/styled";
 import { Card as CardOrigin, Link } from "../libs";
-import { useQuery } from "@tanstack/react-query";
-import { httpService } from "../services";
-import { TGalleryImg } from "../types/galleryImg";
 
 type GalleryCategoryCardProps = {
   category: TGalleryCategory;

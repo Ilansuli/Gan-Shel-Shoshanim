@@ -7,12 +7,13 @@ import {
 import "swiper/css";
 import "swiper/css/effect-fade";
 import { Swiper as SwiperOrigin, SwiperProps, SwiperSlide } from "swiper/react";
-import { ReactComponent as Logo } from "../../public/gan-shel-shoshanim-logo-white.svg";
+import { ReactComponent as Logo } from "../assets/logos/gan-shel-shoshanim-logo-white.svg";
 import { Autoplay, FreeMode, Keyboard } from "swiper/modules";
 import { Parallax } from "react-scroll-parallax";
 import { useQuery } from "@tanstack/react-query";
 import { httpService } from "../services";
 import { TGalleryImg } from "../types/galleryImg";
+import { useEffect, useState } from "react";
 
 const Wrapper = styled.section`
   min-height: 100dvh;
@@ -23,8 +24,8 @@ const Container = styled(ContainerOrigin)`
   width: 95%;
 `;
 const ImgWrapperIntro = styled(Parallax)`
-  background-image: url("../../public/images/intro1-garden-wide.jpg");
-  background-color: rgba(0, 0, 0, 0.6);
+  background-image: url("/images/intro1-garden-wide.jpg");
+  background-color: rgba(0, 0, 0, 0.1);
   background-blend-mode: hard-light;
   background-position: center;
   background-size: cover, cover;
@@ -37,7 +38,7 @@ const ImgWrapperIntro = styled(Parallax)`
     aspect-ratio: 1/0.6;
   }
   @media (min-width: 1000px) {
-    aspect-ratio: 1/0.4;
+    aspect-ratio: 1/0.5;
   }
 `;
 
@@ -46,7 +47,7 @@ const Modal = styled(Parallax)``;
 const LogoIcon = styled(Logo)`
   width: 150px;
   height: 150px;
-  @media (min-width: 700px) {
+  @media (min-width: 500px) {
     width: 200px;
     height: 200px;
   }
@@ -147,7 +148,7 @@ type SocialListItemProps = {
 };
 const SocialListItem = styled.li<SocialListItemProps>`
   background-image: ${({ social }) =>
-    `url(../../public/images/social-icons/${social}.svg)`};
+    `url(/images/social-icons/${social}.svg)`};
   height: 35px;
   width: 35px;
   border-radius: 50%;
@@ -162,11 +163,39 @@ const SocialListItem = styled.li<SocialListItemProps>`
 `;
 
 const HomePage: React.FC = () => {
+  const initialImgsData: TGalleryImg[] = [
+    {
+      _id: "657abaccaa280bb302baebfc",
+      imgSrc: "/images/gallery/1.jpg",
+      parentProjectId: "657469e2e6211f8ca887a01c",
+      parentCategoriesIds: [
+        "6574693339ae28cfc6146a3b",
+        "6574693339ae28cfc6146a3d",
+        "6574693339ae28cfc6146a41",
+        "6574693339ae28cfc6146a3c",
+        "6574693339ae28cfc6146a40",
+      ],
+    },
+    {
+      _id: "657abaccaa280bb302baec02",
+      imgSrc: "/images/gallery/2.jpg",
+      parentProjectId: "657469e2e6211f8ca887a01c",
+      parentCategoriesIds: [
+        "6574693339ae28cfc6146a3d",
+        "6574693339ae28cfc6146a3f",
+        "6574693339ae28cfc6146a3b",
+        "6586f6dd20c5593df130234a",
+      ],
+    },
+  ];
   const imgsQuery = useQuery({
     queryKey: ["imgs"],
     queryFn: async () => {
-      return await httpService.get(`galleryImgs`);
+      const res = await httpService.get(`galleryImgs`);
+      console.log("res", res);
+      return res;
     },
+    placeholderData: initialImgsData,
   });
 
   return (
@@ -177,7 +206,7 @@ const HomePage: React.FC = () => {
             <LogoIcon />
           </Modal>
         </ImgWrapperIntro>
-        <DescriptionWrapper speed={20}>
+        <DescriptionWrapper speed={5}>
           <Description>
             <DescriptionMain>
               <DescriptionTitle>

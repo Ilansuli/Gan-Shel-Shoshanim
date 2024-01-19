@@ -133,7 +133,7 @@ const ProjectPage: React.FC<ProjectPageProps> = ({}) => {
         <Header>
           <Title>{currProjectQuery.data?.[0].city}</Title>
         </Header>
-        <Masonry columns={{ sm: 2, md: 3 }} spacing={1}>
+        <Masonry columns={{ xs: 2, sm: 2, md: 3 }} spacing={1}>
           <>
             {data?.pages.map((page) => {
               return page.data?.map((img: TGalleryImg, index: number) => {

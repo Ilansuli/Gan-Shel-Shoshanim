@@ -8,7 +8,6 @@ import { RouterProvider } from "@tanstack/react-router";
 import { Router } from "@tanstack/react-router";
 import rootRoute from "./router/rootRoute";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ParallaxProvider } from "react-scroll-parallax";
 const queryClient = new QueryClient();
 
@@ -34,9 +33,21 @@ const TanStackRouterDevtools =
         }))
       );
 
+const ReactQueryDevtools =
+  process.env.NODE_ENV === "production"
+    ? () => null // Render nothing in production
+    : React.lazy(() =>
+        // Lazy load in development
+        import("@tanstack/react-query-devtools").then((res) => ({
+          default: res.ReactQueryDevtools,
+          // For Embedded Mode
+        }))
+      );
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
 root.render(
   // <React.StrictMode>
   <ParallaxProvider>

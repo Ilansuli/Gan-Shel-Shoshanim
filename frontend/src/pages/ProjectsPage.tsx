@@ -17,7 +17,6 @@ const ProjectsPage: React.FC<ProjectsPageProps> = ({}) => {
     },
   });
 
-  console.log(projectsQuery);
   return (
     <Wrapper>
       <Container>

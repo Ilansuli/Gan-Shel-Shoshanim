@@ -4,8 +4,6 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { TGalleryImg } from "../types/galleryImg";
-import galleryImgs from "../data/galleryImgs.json";
-import galleryCategories from "../data/galleryCategories.json";
 import { Container, Modal as ModalOrigin } from "../libs";
 import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import { useParams } from "@tanstack/react-router";

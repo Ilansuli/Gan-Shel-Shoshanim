@@ -7,9 +7,7 @@ import { Card as CardOrigin, Link } from "../libs";
 import { TProject } from "../types";
 import { useQuery } from "@tanstack/react-query";
 import styled from "@emotion/styled";
-import galleryImgs from "../data/galleryImgs.json";
 import { httpService } from "../services";
-import { TGalleryImg } from "../types/galleryImg";
 
 type ProjectPreviewCardProps = {
   project: TProject;
